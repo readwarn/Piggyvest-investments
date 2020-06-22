@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../tailwind/build/styles.css">
+    <link rel="stylesheet" href="piggy.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Piggy</title>
+</head>
+<body>
+    <div id="app" class="content">
+        <!-- The sidebar to slide in when interest is clicked -->
+        <div class="sidebar p" v-bind:class="{'hide':hideInterest, 'show':showInterest}">  
+            <i class="fa fa-times block text-blue" @click="hideInterestf"></i>
+            <p class="fcn">Calculate interest</p>
+            <p class="todo">Find out how much you'll have after investment</p>
+            <label for="amount">Amount to lock</label>
+            <input type="number" id="amount">
+            <label for="Duration">Amount to lock</label>
+            <input type="number" id="Duration">
+            <button class="btn btn-small">CALCULATE INTEREST</button>
+        </div>
+        <!-- feedback sidebar -->
+        <div class="sidebar p" v-bind:class="{'hide':hideFeedback, 'show':showFeedback}" >
+                 <i class="fa fa-times text-blue block"  @click="hideFeedbackf"></i>
+                 <p class="fcn mb-3">Your result</p>
+                 <p class="todo">You need to save {{frequency}}</p>
+                 <p class="output">{{savings}}</p>
+                 <p>In order to have</p>
+                 <p class="output">{{target}}</p>
+                 <p class="todo">by {{cod}}</p>
+        </div>
+        <!-- The sidebar to slide in when the target is clicked -->
+         <div class="sidebar p" v-bind:class="{'hide':hideTarget, 'show':showTarget}">
+            <i class="fa fa-times text-blue block" @click="hideTargetf"></i>
+            <p class="fcn">Target Calculator</p>
+            <p class="todo">Find out how much you'll have to save monthly/daily to have a specific amount by a certain date</p>
+            <label for="target">What's your target</label>
+            <input type="number" id="target" placeholder="e.g 25000" v-model="target">
+            <label for="frequency">How often do you want to save?</label>
+            <div class="dropdown">
+                <input type="text" id="frequency" placeholder="Daily/Monthly" @click="dropdownHide=!dropdownHide" v-model="frequency">
+                <div class="option" v-bind:class="{'hidden':dropdownHide}">
+                    <p @click="daily">Daily</p>
+                    <p @click="monthly">Monthly</p>
+                </div>
+            </div>
+            <label for="date">When do you want to cash out?</label>
+            <input type="date" id="date" v-model="pickedDate" v-bind:min="todayDate">
+            <label for="date" class="error">{{error}}</label>
+            <button class="btn btn-small" @click="calculateTarget">CALCULATE TARGET</button>
+
+         </div>
+        <!-- Main content -->
+         <div v-bind:class="{'hidden':hideMain}">
+             <i class="fa fa-times text-blue block"></i>
+             <p class="fcn">Select a function</p>
+             <p class="todo">What would you like to do?</p>
+             <button class="btn btn-big mb-8" @click="showInterestf">CALCULATE INTEREST</button>
+             <button class="btn btn-big btn-active" @click="showTargetf">CALCULATE TARGET</button>
+         </div>
+    </div>
+    <script src="piggy.js"></script>
+</body>
+</html>

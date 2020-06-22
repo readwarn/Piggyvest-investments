@@ -1,0 +1,170 @@
+body{
+    background: #3b7fbe;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Josefin Sans', sans-serif; 
+}
+#app{
+  overflow: hidden;
+  position: relative;
+  height: 600px;
+
+}
+.text-blue{
+    color: #3b7fbe;;
+}
+.btn{
+   background-color: #3b7fbe;
+   color: white;
+   border-top-left-radius: 0.9rem;
+   border-bottom-right-radius: 0.9rem;
+   width: 100%;
+   font-size: 0.8rem;
+   border: #3b7fbe solid 1px;
+   font-weight: 500;
+   outline: none;
+}
+.btn:focus{
+  outline: none;
+}
+.btn-big{
+  padding: 3rem 2rem;
+}
+.btn-small{
+  padding: 1rem 0.7rem ;
+}
+
+button.btn-active{
+  background-color: white;
+  color: #3b7fbe ;
+  }
+.todo{
+    font-size: 0.7rem;
+    margin-bottom: 25px;
+}
+.option{
+  position: absolute;
+  width: 100%;
+}
+.option p{
+  padding:0.6rem;
+  background-color:ghostwhite;
+  cursor: pointer;
+}
+.option p:hover{
+  background-color:#3b7fbe;
+}
+.dropdown{
+  margin-bottom: 25px;
+  position: relative;
+}
+.hide{
+  transform: translateX(100%);
+}
+.show{
+  transform: translateX(0%);
+}
+input{
+  width: 100%;
+  padding: 0.6rem;
+  display: inline-block;
+  background-color: rgb(222, 247, 235);
+  border-radius: 0.3rem;
+  margin-bottom: 25px;
+  outline: none;
+}
+.dropdown input{
+  margin-bottom: 0;
+}
+label{
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.output{
+  color: #0b73d4;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+i{
+  text-align: right;
+  margin-bottom: 25px;
+}
+
+.sidebar{
+  position: absolute;
+  z-index: 22;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  transition: ease-in-out 0.5s all;
+}
+
+.error{
+  color: red;
+}
+
+/* Media queries*/
+@media (min-width: 480px) {
+   .content{
+         margin: 0 auto;
+         padding: 4rem;   
+   }
+
+   .p{
+        padding: 4rem;
+   }
+
+   .fcn{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color:#3b7fbe;
+  }
+  .todo{
+    font-size: 0.7rem;
+    margin-bottom: 25px;
+
+   }
+  }
+
+  @media (min-width: 600px) {
+    .content{
+          margin: 0 auto;
+          padding: 3rem;   
+          width: 60%;
+    }
+    .p{
+      padding: 3rem;
+    }
+    .fcn{
+     font-size: 1rem;
+     font-weight: 500;
+     color:#3b7fbe;
+   }
+   .todo{
+     font-size: 0.7rem;
+     margin-bottom: 25px;
+    }
+   }
+
+  @media (min-width:900px){
+      .content{
+        margin: 0 auto;
+        padding: 2rem;
+        width: 40%;
+      }
+      .p{
+        padding: 1.5rem;
+      }
+      .fcn{
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #3b7fbe;
+      }
+      .todo{
+        font-size: 0.8rem;
+        margin-bottom: 25px;
+       }
+  }
