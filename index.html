@@ -13,8 +13,8 @@
 <body>
     <div id="app" class="content">
         <!-- The sidebar to slide in when interest is clicked -->
-        <div class="sidebar p" v-bind:class="{'hide':hideInterest, 'show':showInterest}">  
-            <i class="fa fa-times block text-blue" @click="hideInterestf"></i>
+        <div class="sidebar p" v-bind:class="{'hide':hideInterest, 'show':showInterest}">
+            <div class="close" @click="hideInterestf"><img src="assets/close-icon.svg" alt="close"></div>
             <p class="fcn">Calculate interest</p>
             <p class="todo">Find out how much you'll have after the investment</p>
             <label for="amount">Amount to lock</label>
@@ -25,7 +25,7 @@
         </div>
         <!-- feedback sidebar -->
         <div class="sidebar p" v-bind:class="{'hide':hideFeedback, 'show':showFeedback}" >
-                 <i class="fa fa-times text-blue block"  @click="hideFeedbackf"></i>
+                 <div class="close" @click="hideFeedbackf"><img src="assets/close-icon.svg" alt="close"></div>
                  <p class="fcn mb-3">Your result</p>
                  <p class="todo">You need to save {{frequency}}</p>
                  <p class="output">{{savings}}</p>
@@ -35,7 +35,7 @@
         </div>
         <!-- The sidebar to slide in when the target is clicked -->
          <div class="sidebar p" v-bind:class="{'hide':hideTarget, 'show':showTarget}">
-            <i class="fa fa-times text-blue block" @click="hideTargetf"></i>
+            <div class="close" @click="hideTargetf"><img src="assets/close-icon.svg" alt="close"></div>
             <p class="fcn">Target Calculator</p>
             <p class="todo">Find out how much you'll have to save monthly/daily to have a specific amount by a certain date</p>
             <label for="target">What's your target</label>
@@ -56,7 +56,7 @@
          </div>
         <!-- Main content -->
          <div v-bind:class="{'hidden':hideMain}">
-             <i class="fa fa-times text-blue block"></i>
+             <div class="close"><img src="assets/close-icon.svg" alt="close"></div>
              <p class="fcn">Select a function</p>
              <p class="todo">What would you like to do?</p>
              <button class="btn btn-big mb-8" @click="showInterestf">CALCULATE INTEREST</button>

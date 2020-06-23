@@ -1,8 +1,8 @@
 body{
-    background: #3b7fbe;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    font-family: 'Josefin Sans', sans-serif; 
+  background: #ECE9E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: 'Josefin Sans', sans-serif; 
 }
 #app{
   overflow: hidden;
@@ -50,6 +50,7 @@ button.btn-active{
   padding:0.6rem;
   background-color:ghostwhite;
   cursor: pointer;
+  color: #3b7fbe;
 }
 .option p:hover{
   background-color:#3b7fbe;
@@ -87,9 +88,10 @@ label{
   font-weight: 900;
 }
 
-i{
-  text-align: right;
+.close{
   margin-bottom: 25px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .sidebar{
@@ -103,68 +105,43 @@ i{
 }
 
 .error{
-  color: red;
+  color:rgb(255, 71, 71);
+  font-size: 0.9rem;
+}
+.p{
+  padding: 4rem;
 }
 
+.fcn{
+  font-size: 1.9rem;
+  font-weight: 500;
+  color:#3b7fbe;
+}
+.todo{
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+ }
+
 /* Media queries*/
-@media (min-width: 480px) {
+@media (min-width: 360px) {
    .content{
          margin: 0 auto;
          padding: 4rem;   
-   }
-
-   .p{
-        padding: 4rem;
-   }
-
-   .fcn{
-    font-size: 1.3rem;
-    font-weight: 500;
-    color:#3b7fbe;
-  }
-  .todo{
-    font-size: 0.7rem;
-    margin-bottom: 25px;
-
-   }
+       }
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 720px) {
     .content{
           margin: 0 auto;
-          padding: 3rem;   
-          width: 60%;
-    }
-    .p{
-      padding: 3rem;
-    }
-    .fcn{
-     font-size: 1rem;
-     font-weight: 500;
-     color:#3b7fbe;
-   }
-   .todo{
-     font-size: 0.7rem;
-     margin-bottom: 25px;
+          padding: 4rem;   
+          width: 65%;
     }
    }
 
   @media (min-width:900px){
       .content{
         margin: 0 auto;
-        padding: 2rem;
-        width: 40%;
+        padding: 4rem;
+        width: 50%;
       }
-      .p{
-        padding: 1.5rem;
-      }
-      .fcn{
-        font-size: 1.5rem;
-        font-weight: 500;
-        color: #3b7fbe;
-      }
-      .todo{
-        font-size: 0.8rem;
-        margin-bottom: 25px;
-       }
   }
